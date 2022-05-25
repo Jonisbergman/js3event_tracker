@@ -1,0 +1,213 @@
+/* RESET */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* Custom CSS */
+
+:root {
+  --body-bg: #202020;
+  --clr-border:#303030;
+  --clr-6: #3d3d3d;
+  --clr-5: #464646;
+  --clr-4: #616161;
+  --clr-3:  #7e7e7e;
+  --clr-2: #aaa;
+  --clr-1: #c1c1c1;   
+}
+
+body {
+  background-color: var(--body-bg);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  width: 100vw;
+}
+
+.App{
+  color: var(--clr-2);
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.btn {
+  border: none;
+  background-color: var(--clr-3);
+  color: var(--clr-border);
+  border-radius: 50%;
+  font-size: large;
+  width: 2rem;
+  height: 2rem;
+  transition: 350ms ease-in-out;  
+}
+
+.btn:hover {
+  color: var(--clr-2);
+  border: 2px solid var(--clr-2);
+  transform: scale(1.2);
+  }
+ 
+  .fa-plus {
+    position: absolute;
+    color: var(--clr-1);
+    background-color: var(--clr-3);
+    border-radius: 50%;   
+  }
+
+/* Navbar */
+
+.navbar {  
+  background-color: var(--clr-6);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  padding-block: 1.5em ;
+}
+
+.navbar h1 {
+  position: absolute;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.8rem;
+  margin-left: auto;
+  margin-right: 7rem;
+}
+
+
+/* Body */
+
+.list-header { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  border-radius: 13px 13px 0 0;
+  height: 3rem;
+  margin-top: 5rem; 
+  background-color: var(--clr-6);    
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.event-board {   
+  background-color: var(--clr-3);
+  height: 70vh;
+  width: 70%;  
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 0 0 13px 13px;  
+  position: absolute;
+}
+
+.item-list {
+  margin: 0;
+  padding-left: 15px;  
+  list-style: none;
+  display: grid;  
+  grid-template-columns: 3fr 3fr 3fr 3fr; 
+  overflow: hidden; 
+}
+
+.event-item {   
+  margin-top: 1rem;
+  border-radius: 13px;
+  background-color: var(--clr-5);  
+  width: 20rem;
+  height: 15rem;
+  text-align: center;
+  transition: 250ms ease-out;
+  
+}
+
+.event-item:hover {
+  cursor: pointer; 
+  transform: scale(1.06);
+}
+
+.item-header {
+  background-color: var(--clr-border);  
+  padding: 0;  
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;   
+}
+
+.item-body {
+  margin-top: 2rem;
+}
+
+.item-date {
+  margin-top: 4rem;
+  font-weight: 300;  
+}
+
+/* Footer */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--clr-border);
+  text-align: center; 
+}
+
